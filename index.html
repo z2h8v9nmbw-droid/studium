@@ -141,7 +141,7 @@ details.week>summary::-webkit-details-marker{display:none}
     <p><b>Latin, 1 hour.</b> One Ørberg chapter a week. Add new words to Anki every day and do your reviews first.</p>
     <p><b>Scripture and Catechism, 30 minutes.</b> Year One covers the Bible's narrative books and the Gospels. Wisdom, prophets and epistles follow in Year Two. The Catechism is read in full across the year.</p>
     <p><b>Main reading, 2 hours.</b> Read the primary text, then write a short summary in your commonplace book. Stephanus and Bekker numbers are given so any translation works.</p>
-    <p><b>Music, 30 minutes.</b> Theory or chant from Monday to Thursday, then focused listening on Friday.</p>
+    <p><b>Music, 30 minutes.</b> Theory or chant from Monday to Thursday, then focused listening on Friday. Theory days follow the chapters of ABRSM's <i>Discovering Music Theory</i> workbooks; check your answers in the matching answer book.</p>
     <p><b>On a 2-hour day,</b> keep Latin and Scripture and halve the main reading. Move music to your commute. A missed day stays unticked, so catch it up in week 14.</p>
   </section>
 </div>
@@ -237,11 +237,11 @@ const MAINLABEL=["Philosophy","Theology","Philosophy","Theology","History"];
 
 /* ---------- Music ---------- */
 const MUSIC={
- 1:[["Theory: pitch, the staff, clefs","Mass VIII (de Angelis): Kyrie and Gloria"],["Theory: note values and time signatures","Attende Domine"],["Theory: major scales and key signatures","Salve Regina (simple tone)"],["Theory: intervals","Ave Maria (chant)"],["Theory: minor scales","Victimae paschali laudes"],["Theory: triads and cadences","Veni Creator Spiritus"],["Theory: compound time, transposition","Dies irae"],["Theory: Grade 3 review paper","Rorate caeli"],
+ 1:[[["Grade 1, The Basics and ch. 1 Rhythm I (pp. 1–7)","Grade 1, ch. 2 Pitch I (pp. 8–12)","Grade 1, ch. 3 Rhythm II (pp. 13–18)","Grade 1, ch. 4 Pitch II (pp. 19–23)"],"Mass VIII (de Angelis): Kyrie and Gloria"],[["Grade 1, ch. 5 Rhythm III (pp. 24–28)","Grade 1, ch. 6 Scales (pp. 29–34)","Grade 1, ch. 7 Keys and key signatures (pp. 35–39)","Grade 1, chs. 8–9 Intervals, tonic triads (pp. 40–45)"],"Attende Domine"],[["Grade 1, chs. 10–11 Terms and signs, music in context (pp. 46–54)","Grade 1, Practice exam paper (p. 55); mark with the answer book","Grade 2, ch. 1 Pitch (pp. 1–5)","Grade 2, ch. 2 Rhythm I, first half (pp. 6–10)"],"Salve Regina (simple tone)"],[["Grade 2, ch. 2 Rhythm I, second half (pp. 11–14)","Grade 2, ch. 3 Rhythm II (pp. 15–18)","Grade 2, ch. 4 Rhythm III (pp. 19–23)","Grade 2, ch. 5 Keys and scales I (pp. 24–29)"],"Ave Maria (chant)"],[["Grade 2, ch. 6 Keys and scales II (pp. 30–34)","Grade 2, chs. 7–8 Intervals, tonic triads (pp. 35–39)","Grade 2, chs. 9–10 Terms and signs, music in context (pp. 40–48)","Grade 2, Practice exam paper (p. 49); mark with the answer book"],"Victimae paschali laudes"],[["Grade 3, ch. 1 Rhythm I, first half (pp. 1–5)","Grade 3, ch. 1 Rhythm I, second half (pp. 6–10)","Grade 3, ch. 2 Rhythm II (pp. 11–18)","Grade 3, ch. 3 Pitch (pp. 19–24)"],"Veni Creator Spiritus"],[["Grade 3, ch. 4 Keys and scales I (pp. 25–28)","Grade 3, ch. 5 Keys and scales II, first half (pp. 29–33)","Grade 3, ch. 5 Keys and scales II, second half (pp. 34–37)","Grade 3, ch. 6 Intervals (pp. 38–41)"],"Dies irae"],[["Grade 3, ch. 7 Tonic triads (pp. 42–44)","Grade 3, ch. 8 Terms and signs (pp. 45–48)","Grade 3, ch. 9 Music in context (pp. 49–52)","Grade 3, Practice exam paper (p. 53); mark with the answer book"],"Rorate caeli"],
    ["Chant notation: the four-line staff, clefs, punctum and virga","Pange lingua"],["Chant notation: podatus, clivis, torculus, porrectus","Adoro te devote"],["Sing: Kyrie of Mass VIII from the notation","Mass VIII: Kyrie, sung along"],["Sing: Sanctus and Agnus Dei of Mass VIII","Ubi caritas"],["Sing: Pater Noster and Salve Regina","Christus factus est"],["Sing all of Mass VIII through","Te Deum"]],
  2:[["Chant: the eight modes, finals and dominants","Ad te levavi (Advent introit)"],["Modes 1–2: find the final and range in three chants","Rorate caeli (introit)"],["Modes 3–4","Puer natus est"],["Modes 5–6","Viderunt omnes (chant gradual)"],["Modes 7–8","Ecce advenit"],["Psalm tones: how to sing a psalm","Hodie Christus natus est"],["Sing Compline in Latin from the Parish Book of Chant","Compline (Sunday)"],
-   ["Theory Grade 4: alto clef, chromatic intervals","Requiem aeternam (introit)"],["Grade 4: ornaments, SATB layout","Lux aeterna"],["Grade 4: double sharps and flats, technical names","Alleluia: Pascha nostrum"],["Grade 4: review paper","Haec dies"],["Sing: Credo III","Veni Sancte Spiritus"],["Sing: Regina caeli and Ave maris stella","Regina caeli"],["Sing Compline through","Compline, sung along"]],
- 3:[["Theory Grade 5: tenor clef, irregular time","Lauda Sion"],["Grade 5: four-part chords","Stabat Mater (chant)"],["Grade 5: cadences","O salutaris and Tantum ergo"],["Grade 5: composing a melody","Gaudeamus omnes"],["Grade 5: ranges of instruments and voices","Spiritus Domini"],["Grade 5: review paper","Asperges me"],["Sing: Asperges me and Vidi aquam","Vidi aquam"],
+   [["Grade 4, ch. 1 Rhythm I (pp. 1–7)","Grade 4, ch. 2 Rhythm II, first half (pp. 8–11)","Grade 4, ch. 2 Rhythm II, second half (pp. 12–15)","Grade 4, ch. 3 Pitch, first half (pp. 16–19)"],"Requiem aeternam (introit)"],[["Grade 4, ch. 3 Pitch, second half (pp. 20–23)","Grade 4, ch. 4 Keys and scales I (pp. 24–29)","Grade 4, ch. 5 Keys and scales II, first half (pp. 30–34)","Grade 4, ch. 5 Keys and scales II, second half (pp. 35–38)"],"Lux aeterna"],[["Grade 4, ch. 6 Intervals, first half (pp. 39–42)","Grade 4, ch. 6 Intervals, second half (pp. 43–46)","Grade 4, ch. 7 Triads and chords, first half (pp. 47–50)","Grade 4, ch. 7 Triads and chords, second half (pp. 51–53)"],"Alleluia: Pascha nostrum"],[["Grade 4, ch. 8 Terms, signs and instruments I (pp. 54–58)","Grade 4, ch. 9 Terms, signs and instruments II (pp. 59–63)","Grade 4, ch. 10 Music in context (pp. 64–68)","Grade 4, Practice exam paper (p. 69); mark with the answer book"],"Haec dies"],["Sing: Credo III","Veni Sancte Spiritus"],["Sing: Regina caeli and Ave maris stella","Regina caeli"],["Sing Compline through","Compline, sung along"]],
+ 3:[[["Grade 5, ch. 1 Rhythm, first half (pp. 1–5)","Grade 5, ch. 1 Rhythm, second half (pp. 6–9)","Grade 5, ch. 2 Pitch I, first half (pp. 10–13)","Grade 5, ch. 2 Pitch I, second half (pp. 14–16)"],"Lauda Sion"],[["Grade 5, ch. 3 Pitch II, first half (pp. 17–21)","Grade 5, ch. 3 Pitch II, second half (pp. 22–26)","Grade 5, ch. 4 Keys and scales, first half (pp. 27–30)","Grade 5, ch. 4 Keys and scales, second half (pp. 31–34)"],"Stabat Mater (chant)"],[["Grade 5, ch. 5 Intervals, first half (pp. 35–39)","Grade 5, ch. 5 Intervals, second half (pp. 40–43)","Grade 5, ch. 6 Chords, part 1 (pp. 44–48)","Grade 5, ch. 6 Chords, part 2 (pp. 49–52)"],"O salutaris and Tantum ergo"],[["Grade 5, ch. 6 Chords, part 3 (pp. 53–56)","Grade 5, ch. 6 Chords, part 4 (pp. 57–60)","Grade 5, ch. 7 Terms, signs and instruments I, first half (pp. 61–64)","Grade 5, ch. 7 Terms, signs and instruments I, second half (pp. 65–67)"],"Gaudeamus omnes"],[["Grade 5, ch. 8 Terms, signs and instruments II, first half (pp. 68–71)","Grade 5, ch. 8 Terms, signs and instruments II, second half (pp. 72–75)","Grade 5, ch. 9 Music in context, first half (pp. 76–80)","Grade 5, ch. 9 Music in context, second half (pp. 81–84)"],"Spiritus Domini"],[["Grade 5, Practice exam paper, first half (p. 85 on)","Grade 5, Practice exam paper, second half","Grade 5, Mark the paper with the answer book; redo what you got wrong","Grade 5, Revise ch. 6 (chords and cadences)"],"Asperges me"],["Sing: Asperges me and Vidi aquam","Vidi aquam"],
    ["Chant propers: reading a full introit","Alma Redemptoris Mater"],["Chant propers: the gradual and alleluia","Ave Regina caelorum"],["Sing: In paradisum","In paradisum"],["Sing: Magnificat, tone 8","Magnificat (tone 8)"],["Sing: Ave verum (chant)","Ave verum corpus (chant)"],["Sing: the four Marian antiphons","Salve Regina (solemn tone)"],["Sing Mass VIII and Compline from memory where you can","Your own choice from the year"]]};
 
 /* ---------- Books ---------- */
@@ -249,15 +249,15 @@ const BOOKS={
  1:[["Method","Adler & Van Doren, How to Read a Book","Week 1 only"],
   ["Philosophy","Kreeft, Socratic Logic (3.1 edition)","Weeks 2–8; page ranges follow this edition"],
   ["Philosophy","Plato, Five Dialogues (Hackett, Grube/Cooper)","Euthyphro, Apology, Crito, Phaedo. Keep it for Meno next term"],
-  ["Theology","Sheed, Theology for Beginners",""],
-  ["Theology","Sheed, Theology and Sanity","Ignatius Press edition"],
-  ["History","Homer, The Iliad","Lattimore or Fagles translation"],
+  ["Theology","Sheed, Theology for Beginners","Angelico Press edition"],
+  ["Theology","Sheed, Theology and Sanity",""],
+  ["History","Homer, The Iliad","Fagles translation (Penguin)"],
   ["Scripture","A Catholic Bible, RSV-2CE","Ignatius Catholic Study Bible notes are a useful extra. Used all year"],
   ["Scripture","Catechism of the Catholic Church","Used all year"],
   ["Latin","Ørberg, Lingua Latina: Familia Romana","With Exercitia Latina I. Used all year"],
   ["Latin","Wheelock's Latin","Grammar reference only"],
   ["Latin","Anki (free app)","Daily vocabulary reviews"],
-  ["Music","ABRSM Theory Workbooks, Grades 1–3",""],
+  ["Music","ABRSM Discovering Music Theory, Grades 1–3",""],
   ["Music","Parish Book of Chant (CMAA)","Free PDF from the Church Music Association of America. Used all year"]],
  2:[["Philosophy","Plato, Symposium (Hackett, Nehamas & Woodruff)",""],
   ["Philosophy","Plato, Republic","Bloom (Basic Books) or Grube/Reeve (Hackett). Meno is in Five Dialogues"],
@@ -266,20 +266,20 @@ const BOOKS={
   ["Theology","Augustine, On Christian Teaching (Oxford World's Classics, Green)","How to read Scripture"],
   ["History","Herodotus, The Histories","The Landmark edition has maps and is worth the extra cost"],
   ["History","Thucydides, The Landmark Thucydides (Strassler)",""],
-  ["Music","ABRSM Theory Workbook, Grade 4",""]],
+  ["Music","ABRSM Discovering Music Theory, Grade 4",""]],
  3:[["Philosophy","Aristotle, Nicomachean Ethics","Irwin (Hackett) or Bartlett & Collins (Chicago)"],
   ["Theology","Benedict XVI, Jesus of Nazareth (all three volumes)","Vol. I, Holy Week, The Infancy Narratives"],
   ["History","Virgil, The Aeneid","Fagles or Fitzgerald"],
   ["History","Plutarch, Lives","Dryden's translation (free online) or the Penguin selections"],
   ["Latin","Collins, A Primer of Ecclesiastical Latin","From week 12"],
   ["Latin","A Latin–English hand missal or the Ordo Missae","Any traditional hand missal; the Latin text is also free online"],
-  ["Music","ABRSM Theory Workbook, Grade 5",""]]};
+  ["Music","ABRSM Discovering Music Theory, Grade 5",""]]};
 
 /* ---------- Build plan ---------- */
 const PLAN=[];let globalDay=0;
 for(const t of [1,2,3]){const bib=bibleDays(t),main=mainDays(t);const weeks=[];
  for(let w=0;w<14;w++){const days=[];for(let d=0;d<5;d++){const k=w*5+d;
-  days.push({id:`${t}-${w+1}-${d+1}`,items:[["Latin",LATIN[t][w][d]],["Scripture",bib[k]+" · "+ccc(globalDay)],[w===13?"Writing":(t===1&&w===0?"Method":MAINLABEL[d]),main[w][d]],["Music",d<4?MUSIC[t][w][0]:"Listen: "+MUSIC[t][w][1]]]});globalDay++}
+  days.push({id:`${t}-${w+1}-${d+1}`,items:[["Latin",LATIN[t][w][d]],["Scripture",bib[k]+" · "+ccc(globalDay)],[w===13?"Writing":(t===1&&w===0?"Method":MAINLABEL[d]),main[w][d]],["Music",d<4?(Array.isArray(MUSIC[t][w][0])?MUSIC[t][w][0][d]:MUSIC[t][w][0]):"Listen: "+MUSIC[t][w][1]]]});globalDay++}
   weeks.push({w:w+1,theme:MUSIC[t][w][0]&&(w===13?"Writing and catch-up week":null),days})}
  PLAN.push({t,weeks})}
 const TOTAL=210*4;
