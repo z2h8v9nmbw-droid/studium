@@ -139,7 +139,7 @@ details.week>summary::-webkit-details-marker{display:none}
   <section class="notes">
     <h2>How to use the hours</h2>
     <p><b>Latin, 1 hour.</b> One Ørberg chapter a week. Add new words to Anki every day and do your reviews first.</p>
-    <p><b>Scripture and Catechism, 30 minutes.</b> Year One covers the Bible's narrative books and the Gospels. Wisdom, prophets and epistles follow in Year Two. The Catechism is read in full across the year.</p>
+    <p><b>Scripture and Catechism.</b> Fr Mike Schmitz's <i>Bible in a Year</i> and <i>Catechism in a Year</i> podcasts, one episode of each every day including weekends. Friday's line covers the weekend too. Follow along in the text when you can, and stop on one line to think about it.</p>
     <p><b>Main reading, 2 hours.</b> Read the primary text, then write a short summary in your commonplace book. Stephanus and Bekker numbers are given so any translation works.</p>
     <p><b>Music, 30 minutes.</b> Theory or chant from Monday to Thursday, then focused listening on Friday. Theory days follow the chapters of ABRSM's <i>Discovering Music Theory</i> workbooks; check your answers in the matching answer book.</p>
     <p><b>On a 2-hour day,</b> keep Latin and Scripture and halve the main reading. Move music to your commute. A missed day stays unticked, so catch it up in week 14.</p>
@@ -262,7 +262,7 @@ const BOOKS={
  2:[["Philosophy","Plato, Symposium (Hackett, Nehamas & Woodruff)",""],
   ["Philosophy","Plato, Republic","Bloom (Basic Books) or Grube/Reeve (Hackett). Meno is in Five Dialogues"],
   ["Theology","Early Christian Writings (Penguin Classics, Staniforth & Louth)","The Apostolic Fathers"],
-  ["Theology","Hahn, A Father Who Keeps His Promises","Pairs with the Old Testament narrative you're reading daily"],
+  ["Theology","Hahn, A Father Who Keeps His Promises","A guide to the covenants running through the Old Testament"],
   ["Theology","Augustine, On Christian Teaching (Oxford World's Classics, Green)","How to read Scripture"],
   ["History","Herodotus, The Histories","The Landmark edition has maps and is worth the extra cost"],
   ["History","Thucydides, The Landmark Thucydides (Strassler)",""],
@@ -305,12 +305,16 @@ function renderSummary(){const box=$("summary");box.innerHTML="";let all=0;
   b.onclick=()=>{curT=t;render()};box.appendChild(b)}
  $("allBar").style.width=(100*all/TOTAL)+"%";$("allText").textContent=`${all} of ${TOTAL} tasks done`}
 
-const TRI_SUB={1:"Logic, Socrates' trial and death, Sheed's theology, the Iliad. Genesis to Numbers.",2:"The Republic, the Apostolic Fathers, Herodotus and Thucydides. Joshua to 2 Kings.",3:"Aristotle's Ethics, Benedict XVI on Jesus, the Aeneid and Plutarch. The Gospels and Acts."};
+const TRI_SUB={1:"Logic, Socrates' trial and death, Sheed's theology, the Iliad.",2:"The Republic, the Apostolic Fathers, Herodotus and Thucydides.",3:"Aristotle's Ethics, Benedict XVI on Jesus, the Aeneid and Plutarch."};
 function renderBooks(){const t=curT;$("booksTitle").textContent=`Books for Trimester ${roman(t)}`;
  $("booksSub").textContent=TRI_SUB[t]+(t>1?" You'll still need the Bible, Catechism, Ørberg and the chant book from Trimester I.":"");
  const ul=$("books");ul.innerHTML="";for(const[s,ti,n]of BOOKS[t]){const li=document.createElement("li");
   li.innerHTML=`<span class="subj"></span><span class="t"></span>${n?'<span class="n"></span>':""}`;li.children[0].textContent=s;li.children[1].textContent=ti;if(n)li.children[2].textContent=n;ul.appendChild(li)}}
 
+const POD0=new Date(2026,9,8);
+function podcast(d,di){const n=Math.round((d-POD0)/864e5),span=di===4?2:0;
+ const ep=(name,s)=>{const a=s+n;if(a>365)return name+": finished";if(a<1)return name+": not started";return name+" "+(span&&a<365?a+"–"+Math.min(a+span,365):a)};
+ return ep("Bible in a Year",144)+" · "+ep("Catechism in a Year",42)+(span?" (Fri–Sun)":"")}
 let openWeeks=new Set();
 function renderWeeks(){const t=curT,box=$("weeks");box.innerHTML="";$("weeksTitle").textContent=`Daily readings, Trimester ${roman(t)}`;const tp=todayPos();
  for(const wk of PLAN[t-1].weeks){const det=document.createElement("details");det.className="week";const key=t+"-"+wk.w;det.id="w"+key;
@@ -328,7 +332,7 @@ function renderWeeks(){const t=curT,box=$("weeks");box.innerHTML="";$("weeksTitl
    dy.items.forEach(([k,v],i)=>{const id="c"+dy.id+"-"+i;const lab=document.createElement("label");lab.className="item";lab.htmlFor=id;
     const cb=document.createElement("input");cb.type="checkbox";cb.id=id;cb.checked=!!state.done[dy.id+"-"+i];
     cb.onchange=()=>{if(cb.checked)state.done[dy.id+"-"+i]=1;else delete state.done[dy.id+"-"+i];save();renderSummary();updateCount(det,wk)};
-    const ks=document.createElement("span");ks.className="k";ks.textContent=k;const vs=document.createElement("span");vs.className="v";vs.textContent=v;
+    const ks=document.createElement("span");ks.className="k";ks.textContent=k;const vs=document.createElement("span");vs.className="v";vs.textContent=k==="Scripture"?podcast(dd,di):v;
     lab.append(cb,ks,vs);items.appendChild(lab)});
    row.appendChild(items);days.appendChild(row)});
   det.appendChild(days);box.appendChild(det);
